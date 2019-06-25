@@ -1,0 +1,263 @@
+@mixin gradient {
+	height: 125px;
+	background: linear-gradient(to right, $gradient-left, $gradient-right);
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	width: 50%;
+	justify-content: space-between;
+	margin: 10% 0 0 25%;
+	padding: 5px 10px 10px 80px;
+}
+
+$map: (
+  color: #c3c4c1
+);
+
+@mixin underline {
+  content: '';
+  display: block;
+  background: $underline-color;
+  position: absolute;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+	max-width: 1920px;
+	font-family: $font;
+  background-color: $bg_color;
+}
+
+.header {
+  width: 100%;
+  height: 750px;
+  background: $header-image no-repeat center;
+	border-bottom-right-radius: 30%;
+
+	.header-wrap {
+    padding: 2% 0 10% 10%;
+    float: left;
+		width: 50%;
+		color: $text-color-black;
+
+		.landing-logo {
+			display: inline-block;
+			text-align: left;
+				
+p {
+        float: right;
+        margin: 10px 10px 0 10px;
+        font-weight: 700;
+				width: 65px;
+				font-size: 25px;
+				line-height: 15px;
+				
+				span {
+          letter-spacing: normal;
+          font-size: 10px;
+          display: inline-block;
+					padding-left: 10px;
+					margin-top: 0;
+        }
+			}
+		}
+	}
+}
+
+.header_heading {
+	font-weight: bold;
+	font-size: 50px;
+	max-width: 400px;
+	line-height: 50px;
+	position: relative;
+	z-index: 2;
+}
+
+.header_heading::before {
+	@include underline;
+	height: 20px;
+	width: 210px;
+	left: 0;
+	bottom: 0;
+	z-index: -1;
+}
+
+.header_title,
+.section_title { 
+	display: block; 
+	z-index: 2; 
+	position: relative; 
+	
+}
+
+p.header_text {
+	max-width: 500px;
+}
+
+.header_button {
+	color: #fff;
+	margin-top: 30px;
+	padding: 15px 45px;
+	border: 0 solid #699904;
+	background-color: $btn-color;
+	border-radius: 4px;
+}
+	.header_button:hover {
+		background-color: #5f8a03;
+		transition-duration: .8s;
+	}
+
+.section {
+  margin-top: 8px;
+  text-align: center;
+  z-index: 1;
+
+  .section_text {
+    font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+	color: $text-color-black;
+	position: relative;
+	display: inline-block;
+	line-height: 30px;
+	z-index: 2;
+  }
+
+  .section_text::before {
+		@include underline;
+		height: 20px;
+		width: 190px; 
+		bottom: 0; 
+		right: 0; 
+		z-index: -1;
+	}
+
+  .section_card_wrap {
+		display: flex;
+		align-content: center;
+		margin: 0 15%;
+	}
+
+	.section_card {
+		width: 50%;
+		height: 350px;
+		padding: 20px;
+		margin-right: 2%;
+		text-align: center;
+		border-radius: 4px;
+		background-color: $footer-bg-color;
+
+		.section_card_heading {
+			color: #fff;
+			font-size: 20px;
+			padding: 0;
+			max-width: 100%;
+			line-height: 0;
+			font-weight: bold;
+			border-bottom: 18px solid $underline-color;
+			display: inline-block;
+			margin-bottom: 5px;
+		}
+
+		.section_card_text {
+			color: #fff;
+			font-size: 12px;
+			padding: 0;
+			line-height: 1.5;
+		}
+	}
+}
+
+.section_card img {
+	display: block;
+    margin: auto;
+    width: 100%;
+}
+
+.section_banner {
+  @include gradient;
+  position: relative;
+
+  .section_banner_button {
+    @extend .header_button;
+    margin: 0 50px 0 0;
+  }
+
+	.section_banner_wrap {
+    margin: 0 0 0 50px;
+    line-height: 0.5;
+  }
+
+  .section_banner_heading {
+    font-weight: bold;
+	font-size: 30px;
+	line-height: 5%;
+	color: $text-color-black;
+	position: relative;
+	z-index: 2;
+  }
+  
+  .section_banner_heading::before {
+	@include underline;
+	height: 12px;
+    width: 63px;
+    bottom: -10px;
+    left: 125px;
+    z-index: -1;
+  }
+  
+		.section_banner_text {
+			color: map_get($map, color);
+			.section_banner_text::after {
+					@include underline;
+					height: 10px;
+					width: 8%;
+					top: 42%;
+					left: 22%;
+					
+		}
+  }
+}
+
+.section_banner_text {
+	position: relative;
+	z-index: 2; 
+}
+
+.footer {
+  height: 200px;
+  background-color: $footer-bg-color;
+  margin-top: -70px;
+	color: #fff;
+	
+  .footer-wrap {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 10%;
+    padding-top: 75px;
+  }
+  .footer_text {
+    width: 375px;
+    color: #fff;
+  }
+  .footer_logo {
+    p {
+      float: right;
+      margin: 5px 10px;
+      font-weight: 600;
+      width: 63px;
+      letter-spacing: 2px;
+			color: #fff;
+			
+      span {
+        letter-spacing: normal;
+        font-size: 8px;
+        display: inline-block;
+        padding-left: 6px;
+      }
+    }
+  }
+}
