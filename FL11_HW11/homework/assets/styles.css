@@ -1,0 +1,63 @@
+body {
+    color: rgb(0, 185, 255);
+}
+
+.header {
+    text-align: center;
+}
+
+input {
+    width: 95%;
+    padding: 15px 10px;
+}
+
+hr {
+    background: rgb(178, 221, 236);
+    height: 3px;
+    border: none;
+    margin: 15px 0;
+    padding: 1px;
+    border-radius: 3px;
+}
+
+.div_input {
+    display: flex;
+    justify-content: space-between;
+}
+
+.div_checkbox {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.checkbox {
+    width: 5%;
+}
+
+p {
+    margin: 0 8px 0 0;
+}
+
+.edit {
+    display: flex;
+}
+
+.input_edit {
+    width: 185px;
+    margin: 0 8px;
+}
+
+.message {
+    text-align: center;
+}
+
+.button_add {
+    color: rgb(179, 178, 178);
+    font-size: 2rem;
+    padding: 8px;
+}
+
+.checkbox_icon_delete {
+    width: 5%;
+    margin-left: auto;
+}
